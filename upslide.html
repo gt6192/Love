@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>up slider</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+
+body{
+margin:0;
+padding:0;
+}
+
+/* video */
+#myVideo{
+position:fixed;
+top:0;
+left:0;
+height:100%;
+}
+
+/* main div */
+.maindiv{
+position: fixed;
+top:0;
+left:0;
+color:white;
+width:100%;
+}
+
+/* center text widgit */
+.textwidgit{
+text-align:center;
+width:100%;
+position: fixed;
+top:50%;
+transform:translate(0%, -50%);
+}
+
+/* up scroll bar */
+.up-scroll{
+position:fixed;
+z-index:10;
+top:0;
+height:70%;
+width:100%;
+border-bottom: 6px solid white;
+transition:1s;
+}
+.up-scroll-inner{
+height:100%;
+background: url(gt.jpg);
+background-size: cover;
+background-style:cover;
+box-sizing: border-box;
+margin: 00px 20px 00px 20px;
+border-bottom: 1px solid black;
+}
+.up-scroll div div{
+position:absolute;
+top:70%;
+left:50%;
+transform: translate(-50%, -50%);
+}
+.up-scroll-inner div h2{
+padding:0;
+margin:0;
+text-align:center;
+padding:5px;
+border-radius:10px;
+background-color: white;
+}
+.heart-img{
+position:fixed;
+bottom: 9%;
+left:50%;
+transform: translate(-50%);
+width:200px;
+transition: 1s;
+animation: big-heart-beat 1s infinite;
+}
+@keyframes big-heart-beat{
+0%{transition:0.2s;width:200px;}
+50%{transition:0.2s;width:180px;}
+100%{transition:0.2s;width:200px;}
+}
+.heart-img-show{
+position:absolute;
+left:50%;
+transform: translate(-50%);
+transition: 1s;
+width:80px;
+animation: heart-beat 1s infinite;
+}
+@keyframes heart-beat{
+0%{transition:0.2s;width:80px;}
+50%{transition:0.2s;width:100px;}
+100%{transition:0.2s;width:80px;}
+}
+
+/* up scroll bar hidden */
+.up-scroll-hid{
+position:fixed;
+z-index:10;
+top:-999px;
+height:70%;
+width:100%;
+border-bottom: 6px solid white;
+transition:1s;
+}
+
+</style>
+</head>
+<body>
+
+<!-- video background -->
+<video autoplay muted loop id="myVideo">
+  <source src="stars.mp4" type="video/mp4">
+</video>
+<!-- video background -->
+
+<!-- main div -->
+<div class="maindiv">
+
+<!-- text widgit -->
+<div class="textwidgit">
+<h1>Love</h1>
+<h2>Simple love up-scroll templet.</h2>
+<h3>Pratik GT</h3>
+<h6>&#169; GT's Production Technologies 2020 | Made with love</h6>
+</div>
+<!-- text widgit -->
+
+</div>
+<!-- main div -->
+
+<!-- up-scroll div -->
+<div class="up-scroll-hid" id="scroll">
+<div class="up-scroll-inner">
+<div class="love-you">
+<h2>Love you Myself</h2>
+<br>
+<!-- heart image -->
+<img src="heart.png" class="heart-img" onclick="scroll_show()" id="heart">
+<!-- heart image -->
+</div>
+</div>
+</div>
+<!-- up-scroll div -->
+
+</body>
+
+<script type="text/javascript">
+function scroll_show()
+{
+document.getElementById("scroll").setAttribute("class", "up-scroll");
+document.getElementById("heart").setAttribute("onclick", "scroll_hid()");
+document.getElementById("heart").setAttribute("class", "heart-img-show");
+}
+
+function scroll_hid()
+{
+document.getElementById("scroll").setAttribute("class", "up-scroll-hid");
+document.getElementById("heart").setAttribute("onclick", "scroll_show()");
+document.getElementById("heart").setAttribute("class", "heart-img");
+}
+</script>
+
+</html>
